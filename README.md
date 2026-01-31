@@ -45,7 +45,7 @@ ENTRYPOINT ["./sidestore-vpn"]
 
 ```bash
 # 构建镜像
-docker build -t sidestore-vpn.
+docker build -t sidestore-vpn .
 
 # 启动容器 (必须使用 host 模式并授予网络管理权限)
 docker run -d \

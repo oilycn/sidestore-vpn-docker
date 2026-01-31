@@ -25,7 +25,7 @@
 
 FROM rust:latest as builder
 WORKDIR /usr/src/sidestore-vpn
-RUN git clone [https://github.com/xddxdd/sidestore-vpn.git](https://github.com/xddxdd/sidestore-vpn.git) . &&
+RUN git clone https://github.com/xddxdd/sidestore-vpn.git . &&
 
 cargo build --release
 
@@ -43,10 +43,10 @@ ENTRYPOINT ["./sidestore-vpn"]
 ### 2. 构建与运行容器
 执行以下命令启动服务：
 
-
+```bash
 # 构建镜像
 docker build -t sidestore-vpn.
-```bash
+
 # 启动容器 (必须使用 host 模式并授予网络管理权限)
 docker run -d \
   --name sidestore-vpn \

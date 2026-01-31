@@ -37,7 +37,7 @@ RUN apt-get update && apt-get install -y iproute2 ca-certificates && rm -rf /var
 COPY --from=builder /usr/src/sidestore-vpn/target/release/sidestore-vpn .
 RUN chmod +x sidestore-vpn
 ENTRYPOINT ["./sidestore-vpn"]
-
+```
 
 
 ### 2. 构建与运行容器
@@ -46,7 +46,7 @@ ENTRYPOINT ["./sidestore-vpn"]
 
 # 构建镜像
 docker build -t sidestore-vpn.
-
+```bash
 # 启动容器 (必须使用 host 模式并授予网络管理权限)
 docker run -d \
   --name sidestore-vpn \

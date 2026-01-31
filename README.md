@@ -20,6 +20,7 @@
 
 在 `/root/sidestore-vpn` 目录下创建 `Dockerfile`：dockerfile
 
+```bash
 # 第一阶段：编译
 
 FROM rust:latest as builder
@@ -37,12 +38,12 @@ COPY --from=builder /usr/src/sidestore-vpn/target/release/sidestore-vpn .
 RUN chmod +x sidestore-vpn
 ENTRYPOINT ["./sidestore-vpn"]
 
-```
+
 
 ### 2. 构建与运行容器
 执行以下命令启动服务：
 
-```bash
+
 # 构建镜像
 docker build -t sidestore-vpn.
 
